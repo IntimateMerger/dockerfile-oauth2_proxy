@@ -1,4 +1,6 @@
-# dockerfile-oauth2_proxy
+[![Circle CI](https://circleci.com/gh/IntimateMerger/dockerfile-oauth2_proxy/tree/master.svg?style=svg)](https://circleci.com/gh/IntimateMerger/dockerfile-oauth2_proxy/tree/master)
+
+# oauth2_proxy Dockerfile
 Dockerfile for [oauth2_proxy](https://github.com/bitly/oauth2_proxy)
 
 This Container supports Google Apps only.

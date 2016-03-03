@@ -14,7 +14,7 @@ RUN apk update \
     && apk del tzdata openssl \
     && rm -rf /var/cache/apk/*
 
-EXPOSE=4180
+EXPOSE 4180
 
 CMD oauth2_proxy \
     --cookie-secret=$(uuidgen) \

@@ -13,7 +13,6 @@ If you don't set the env, Rundeck use the default env.
 
 | name | default | description |
 | --- | --- | --- |
-| HTTP_PORT | 4180 |  |
 | UPSTREAM |  | the http url(s) of the upstream endpoint |
 | CLIENT_ID |  | the OAuth Client ID: ie: "123456.apps.googleusercontent.com" |
 | CLIENT_SECRET |  | the OAuth Client Secret |

@@ -16,6 +16,7 @@ If you don't set the env, Rundeck use the default env.
 | UPSTREAM |  | the http url(s) of the upstream endpoint |
 | CLIENT_ID |  | the OAuth Client ID: ie: "123456.apps.googleusercontent.com" |
 | CLIENT_SECRET |  | the OAuth Client Secret |
+| EMAIL_DOMAIN | | authenticate emails with the specified domain |
 
 ### Example
 
@@ -24,5 +25,6 @@ $ docker run -p 4180:4180 \
   -e "UPSTREAM=127.0.0.1:8080" \
   -e "CLIENT_ID=123456.apps.googleusercontent.com" \
   -e "CLIENT_SECRET=XXXXXXXXXXXXXXXXXXXXX" \
+  -e "EMAIL_DOMAIN=example.com" \
   -t intimatemerger/oauth2_proxy
 ```

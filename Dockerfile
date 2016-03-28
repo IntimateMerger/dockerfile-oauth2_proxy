@@ -21,4 +21,5 @@ CMD oauth2_proxy \
     --http-address=0.0.0.0:4180 \
     --upstream=${UPSTREAM} \
     --client-id=${CLIENT_ID} \
-    --client-secret=${CLIENT_SECRET}
+    --client-secret=${CLIENT_SECRET} \
+    --email-domain=${EMAIL_DOMAIN}

@@ -17,12 +17,14 @@ If you don't set the env, Rundeck use the default env.
 | CLIENT_ID |  | the OAuth Client ID: ie: "123456.apps.googleusercontent.com" |
 | CLIENT_SECRET |  | the OAuth Client Secret |
 | EMAIL_DOMAIN | | authenticate emails with the specified domain |
+| COOKIE_SECRET | secret |  |
+| COOKIE_DOMAIN | "" |  |
 
 ### Example
 
 ```bash
 $ docker run -p 4180:4180 \
-  -e "UPSTREAM=127.0.0.1:8080" \
+  -e "UPSTREAM=http://127.0.0.1:8080" \
   -e "CLIENT_ID=123456.apps.googleusercontent.com" \
   -e "CLIENT_SECRET=XXXXXXXXXXXXXXXXXXXXX" \
   -e "EMAIL_DOMAIN=example.com" \

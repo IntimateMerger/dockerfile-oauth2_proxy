@@ -25,4 +25,5 @@ CMD oauth2_proxy \
     -email-domain=${EMAIL_DOMAIN} \
     -cookie-secret=${COOKIE_SECRET} \
     -cookie-domain=${COOKIE_DOMAIN} \
-    -skip-auth-regex=/healthcheck
+    -skip-auth-regex=/healthcheck \
+    -skip-auth-regex=/latest/meta-data/*

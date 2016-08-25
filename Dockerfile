@@ -10,8 +10,9 @@ ENV VERSION=2.1 \
 
 RUN apk add --no-cache curl && \
     curl -sSL "https://github.com/bitly/oauth2_proxy/releases/download/v${VERSION}/oauth2_proxy-${VERSION}.${ARCH}.tar.gz" | tar -xvz -C /tmp && \
-    mv /tmp/oauth2_proxy-${VERSION}.${ARCH}/oauth2_proxy /usr/local/bin/oauth2_proxy && \
-    rm -rf /tmp/*
+    mv /tmp/oauth2_proxy-${VERSION}.${ARCH}/oauth2_proxy /usr/bin/oauth2_proxy && \
+    rm -rf /tmp/* && \
+    echo fine > /healthcheck
 
 ENV COOKIE_SECRET="secret" \
     COOKIE_DOMAIN=""
@@ -25,5 +26,4 @@ CMD oauth2_proxy \
     -email-domain=${EMAIL_DOMAIN} \
     -cookie-secret=${COOKIE_SECRET} \
     -cookie-domain=${COOKIE_DOMAIN} \
-    -skip-auth-regex=/healthcheck \
-    -skip-auth-regex=/latest/meta-data/*
+    -skip-auth-regex=/healthcheck

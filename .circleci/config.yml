@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+
+    docker:
+      - image: docker:17.03.0-ce
+
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Image
+          command: docker build -t oauth2_proxy .
+
+      - run:
+          name: Run Image
+          command: |
+            docker run -d -p 4180:4180 -t oauth2_proxy \
+            -upstream=http://127.0.0.1:8080 \
+            -client-id=123456.apps.googleusercontent.com \
+            -client-secret=XXXXXXXXXXXXXXXXXXXXX \
+            -email-domain=example.com \
+            -cookie-secret=secret \
+            -cookie-domain=www.example.com
+
+      - run:
+          name: Test
+          command: docker run --network=host -it appropriate/curl http://localhost:4180/healthcheck
